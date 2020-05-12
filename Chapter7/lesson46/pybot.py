@@ -6,19 +6,22 @@ from pybot_datetime import today_command, now_command, weekday_command
 def len_command(command):
     cmd, text = command.split()
     length = len(text)
-    response = '文字列ノ長サハ {} 文字デス'.format(length)
+    response = f'文字列ノ長サハ {length} 文字デス'
     return response
 
 
-def heisei_command(command):
-    heisei, year_str = command.split()
+def wareki_command(command):
+    wareki, year_str = command.split()
     if year_str.isdigit():
         year = int(year_str)
-        if year >= 1989:
-            heisei_year = year - 1988
-            response = '西暦{}年ハ、平成{}年デス'.format(year, heisei_year)
+        if year >= 2019:
+            reiwa = year - 2018
+            response = f'西暦{year}年ハ、令和{reiwa}年デス'
+        elif year >= 1989:
+            heisei = year - 1988
+            response = f'西暦{year}年ハ、平成{heisei}年デス'
         else:
-            response = '西暦{}年ハ、平成デハアリマセン'.format(year)
+            response = f'西暦{year}年ハ、平成ヨリ前デス'
     else:
         response = '数値ヲ指定シテクダサイ'
     return response
@@ -44,8 +47,8 @@ while True:
             response = bot_dict[key]
             break
 
-    if '平成' in command:
-        response = heisei_command(command)
+    if '和暦' in command:
+        response = wareki_command(command)
     if '長さ' in command:
         response = len_command(command)
     if '干支' in command:
