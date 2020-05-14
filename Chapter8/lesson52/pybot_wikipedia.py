@@ -8,7 +8,7 @@ def wikipedia_command(command):
         page = wikipedia.page(keyword)
         title = page.title
         summary = page.summary
-        response = 'タイトル: {}\n{}'.format(title, summary)
+        response = f'タイトル: {title}\n{summary}'
     except wikipedia.exceptions.PageError:
-        response = '「{}」ノ意味ガ見ツカリマセンデシタ'.format(keyword)
+        response = f'「{keyword}」ノ意味ガ見ツカリマセンデシタ'
     return response
