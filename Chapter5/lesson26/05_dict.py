@@ -3,8 +3,8 @@ point_dict = {
     '002': (77, 94, 85),
     '003': (80, 52, 99),
 }
-for student_name in point_dict:
-    points = point_dict[student_name]
+for student_id in point_dict:
+    points = point_dict[student_id]
     subject_number = len(points)
     japanese, english, mathmatics = points
     total = japanese + english + mathmatics
@@ -18,4 +18,4 @@ for student_name in point_dict:
         evaluation = 'Good'
     else:
         evaluation = 'Bad'
-    print('学籍番号{}: 合計点は{}、評価は{}です。'.format(student_name, total, evaluation))
+    print(f'学籍番号{student_id}: 合計点は{total}、評価は{evaluation}です。')

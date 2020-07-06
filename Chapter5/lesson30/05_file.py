@@ -1,7 +1,7 @@
-open_file = open('point.txt', 'r')
-raw_data = open_file.read()
+open_file = open('point.txt')
+data = open_file.read()
 open_file.close()
-point_data = raw_data.splitlines()
+point_data = data.splitlines()
 
 point_dict = {}
 for line in point_data:
@@ -43,8 +43,8 @@ for student_name in score_dict:
 
     evaluation = evaluation_dict[student_name]
 
-    text = '[{}] total: {}, evaluation: {}\n'.format(student_name, total, evaluation)
+    text = f'[{student_name}] total: {total}, evaluation: {evaluation}\n'
     output_file.write(text)
 
 output_file.close()
-print('評価結果を{}に出力しました'.format(file_name))
+print(f'評価結果を{file_name}に出力しました')
