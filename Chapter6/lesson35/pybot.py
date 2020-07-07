@@ -12,7 +12,7 @@ for line in lines:
 
 while True:
     command = input('pybot> ')
-    response = ""
+    response = ''
     for key in bot_dict:
         if key in command:
             response = bot_dict[key]

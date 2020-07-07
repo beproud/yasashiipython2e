@@ -12,19 +12,22 @@ for line in lines:
 
 while True:
     command = input('pybot> ')
-    response = ""
+    response = ''
     for key in bot_dict:
         if key in command:
             response = bot_dict[key]
             break
-    if '平成' in command:
-        heisei, year_str = command.split()
+    if '和暦' in command:
+        wareki, year_str = command.split()
         year = int(year_str)
-        if year >= 1989:
-            heisei_year = year - 1988
-            response = '西暦{}年ハ、平成{}年デス'.format(year, heisei_year)
+        if year >= 2019:
+            reiwa = year - 2018
+            response = f'西暦{year}年ハ、令和{reiwa}年デス'
+        elif year >= 1989:
+            heisei = year - 1988
+            response = f'西暦{year}年ハ、平成{heisei}年デス'
         else:
-            response = '西暦{}年ハ、平成デハアリマセン'.format(year)
+            response = f'西暦{year}年ハ、平成ヨリ前デス'
 
     if not response:
         response = '何ヲ言ッテルカ、ワカラナイ'
