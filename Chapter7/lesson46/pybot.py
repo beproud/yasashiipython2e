@@ -2,13 +2,11 @@ from pybot_eto import eto_command
 from pybot_random import choice_command, dice_command
 from pybot_datetime import today_command, now_command, weekday_command
 
-
 def len_command(command):
     cmd, text = command.split()
     length = len(text)
     response = f'文字列ノ長サハ {length} 文字デス'
     return response
-
 
 def wareki_command(command):
     wareki, year_str = command.split()
@@ -26,7 +24,6 @@ def wareki_command(command):
         response = '数値ヲ指定シテクダサイ'
     return response
 
-
 command_file = open('pybot.txt', encoding='utf-8')
 raw_data = command_file.read()
 command_file.close()
@@ -41,10 +38,10 @@ for line in lines:
 
 while True:
     command = input('pybot> ')
-    response = ""
-    for key in bot_dict:
-        if key in command:
-            response = bot_dict[key]
+    response = ''
+    for message in bot_dict:
+        if message in command:
+            response = bot_dict[message]
             break
 
     if '和暦' in command:

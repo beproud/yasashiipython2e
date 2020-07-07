@@ -13,9 +13,9 @@ for line in lines:
 while True:
     command = input('pybot> ')
     response = ''
-    for key in bot_dict:
-        if key in command:
-            response = bot_dict[key]
+    for message in bot_dict:
+        if message in command:
+            response = bot_dict[message]
             break
 
     if not response:
