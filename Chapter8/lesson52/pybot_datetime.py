@@ -1,17 +1,14 @@
 from datetime import date, datetime
 
-
 def today_command():
     today = date.today()
     response = f'今日ノ日付ハ {today} デス'
     return response
 
-
 def now_command():
     now = datetime.now()
     response = f'現在日時ハ {now} デス'
     return response
-
 
 def weekday_command(command):
     try:

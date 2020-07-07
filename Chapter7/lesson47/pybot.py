@@ -71,4 +71,4 @@ while True:
     except Exception as e:
         print('予期セヌ エラーガ 発生シマシタ')
         print(f'* 種類: {type(e)}')
-        print(f'* 内容: {e}')        
+        print(f'* 内容: {e}')

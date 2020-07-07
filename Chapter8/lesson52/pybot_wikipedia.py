@@ -1,6 +1,5 @@
 import wikipedia
 
-
 def wikipedia_command(command):
     cmd, keyword = command.split(maxsplit=1)
     wikipedia.set_lang('ja')
