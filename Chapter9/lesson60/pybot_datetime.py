@@ -1,17 +1,14 @@
 from datetime import date, datetime
 
-
 def today_command():
     today = date.today()
-    response = '今日ノ日付ハ {} デス'.format(today)
+    response = f'今日ノ日付ハ {today} デス'
     return response
-
 
 def now_command():
     now = datetime.now()
-    response = '現在日時ハ {} デス'.format(now)
+    response = f'現在日時ハ {now} デス'
     return response
-
 
 def weekday_command(command):
     try:
@@ -24,7 +21,7 @@ def weekday_command(command):
         weekday_str = '月火水木金土日'
         weekday = weekday_str[one_day.weekday()]
 
-        response = '{} ハ {}曜日デス'.format(one_day, weekday)
+        response = f'{one_day} ハ {weekday}曜日デス'
     except IndexError:
         response = '3ツノ値(年月日)ヲ指定シテクダサイ'
     except ValueError:
